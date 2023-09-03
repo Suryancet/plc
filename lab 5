@@ -1,0 +1,11 @@
+fp=open(r"C:\Users\Gagan gowda\Desktop\New folder\gagan.txt","r")
+txt = fp.read()
+fp.close()
+d={}
+for word in txt.split():
+    d.setdefault(word,0)
+    d[word]+=1
+words=sorted(d.items(),key=lambda x:x[1],reverse=True)
+for i in range (10):
+    print(words[i][0],"is appearing ",words[i][1],"times")
+    
