@@ -1,0 +1,28 @@
+import os
+import sys
+filename=input("Enter the filename")
+if not os.path.isfile(filename):
+    print("Invalid file name")
+    sys.exit()
+fp=open(filename,"r")
+txtlines=fp.readlines()
+fp.close()
+contentlines=[]
+for line in txtlines:
+    lines=""
+    for ch in line:
+        if ch.isalnum():
+            lines+=ch
+    contentlines.append(lines)
+contentlines.sort()
+fp=open(r"C:\Users\deepak\OneDrive\Desktop\mahesh\file2.txt", "w")
+for line in contentlines:
+    fp.write(line)
+    fp.write("\n")
+fp.close()
+fp=open(r"C:\Users\deepak\OneDrive\Desktop\mahesh\file2.txt","r")
+print("="*40)
+print("Sorted contents of the file")
+print("="*40)
+for line in txtlines:
+    print(line)
