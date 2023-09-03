@@ -1,0 +1,38 @@
+class complex:
+    def __init__(self,rp=0,ip=0):
+        self.rp=rp
+        self.ip=ip
+    def display(self):
+        return (f"({self.rp}) + ({self.ip})")
+    
+    def read(self):
+        print("Enter complex Number")
+        rp=int(input("Enter Real part"))
+        ip=int(input("Enter Imaginary part"))
+        self.rp=rp
+        self.ip=ip
+        
+    def addcomplex(self,other):
+        c3=complex()
+        c3.rp=self.rp+other.rp
+        c3.ip=self.ip+other.ip
+        return c3
+    def __str__(self):
+        return f"({self.rp}) + i ({self.ip}) i"
+n= int(input("enter the value of n"))
+print(f"Enter {n} complex numbers")
+lst =[]
+for i in range(n):
+    c=complex()
+    c.read()
+    lst.append(c)
+    
+print("The entered complex numbers are ")
+for i in lst:
+    print(i)
+    
+c=complex()
+for i in lst:
+  c=c.addcomplex(i)
+    
+print(f"The added complex number is {c}")
